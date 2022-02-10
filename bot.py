@@ -24,8 +24,8 @@ class Checker():
         self.pos_result = '//*[@id="percent-matches"]'
 
         ## replace with your credentials if you want
-        self.username = 'mahault@gameaddik.com'
-        self.pwd = 'Quetext2019!'
+        self.username = args.username
+        self.pwd = args.pwd
 
     def login(self):
         # driver.find_element_by_xpath(quetext_search ).click()
@@ -50,6 +50,8 @@ class Checker():
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='Process some string to be verified')
     parser.add_argument('string', type=str, help='a string for the plagiarism checker, 10 words minimum')
+    parser.add_argument('username', type=str, help='quetext username')
+    parser.add_argument('pwd', type=str, help='quetext pwd')
     args = parser.parse_args()
 
     checker = Checker()
